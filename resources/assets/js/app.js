@@ -43,6 +43,8 @@ Vue.component('formulario', require('./components/Formulario.vue'));
 Vue.component('artigocard', require('./components/ArtigoCard.vue'));
 Vue.component('task-list', require('./components/ListaProdutoVendas.vue'));
 
+Vue.component('json', require('./components/Json.vue'));
+
 const app = new Vue({
     el: '#app',
     store,

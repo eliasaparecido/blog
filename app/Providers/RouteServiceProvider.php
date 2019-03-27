@@ -26,6 +26,11 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        Route::bind('usuarios', function($value){
+            $collection = App\User::whereId($value)->get();
+            return $collection->first();
+        });
     }
 
     /**

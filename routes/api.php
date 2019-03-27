@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::namespace('Api')->group(function(){
+    Route::resource('usuarios', 'UserController', ['except' => ['create', 'edit']]);//->middleware('can:eAdmin');
+    //Route::get('usuarios/pesquisar', ['as' => 'usuarios.pesquisar', 'uses' => 'UserController@pesquisar']);
+    //Route::resource('empresa', 'EmpresaController');//->middleware('can:eAdmin');
 });

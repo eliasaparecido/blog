@@ -49,7 +49,7 @@
     </div>
     <hr>
     <span class="col-md-12">
-        <button style="margin-top:10px" type="submit" class="btn btn-primary btn-block">Finalizar</button>
+        <button style="margin-top:10px" type="submit" class="btn btn-primary">Salvar</button>
     </span>
     </form>
 
@@ -107,7 +107,7 @@
                 //this.list = res.data
             }).catch((err) => {
                 console.error(err)   
-                });  
+            });  
         },
  
         createTask() {
@@ -142,19 +142,7 @@
                 this.venda.valortotal = (parseFloat(this.venda.valortotal) - parseFloat(valor));
                 this.venda.valortotal = (this.venda.valortotal.toFixed(2));
                 this.venda.list.splice(index, 1)
-            },
-            // lista:function(lista)
-            // {
-            //     lista.sort(function(a, b){
-            //         if(a.item < b.item){
-            //             return 1;
-            //         }
-            //         if(a.item > b.item){
-            //             return -1;
-            //         }
-            //         return 0;
-            //     }); 
-            // }
+            }
         }
     }
 </script>

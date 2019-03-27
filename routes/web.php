@@ -30,6 +30,8 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('can:autor');
 
+Route::resource('admin-json', 'AdminJsonController');
+
 Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
     Route::resource('artigos', 'ArtigosController')->middleware('can:autor');
     Route::resource('usuarios', 'UsuariosController')->middleware('can:eAdmin');
@@ -39,4 +41,7 @@ Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function
     Route::resource('vendas', 'VendasController')->middleware('can:eAdmin');
     Route::post('vendas/salvar',['as' => 'vendas.salvar', 'uses' => 'VendasController@store']);
     Route::resource('vendas/vendas-itens', 'VendaItemsController')->middleware('can:eAdmin');
+
+
+    
 });
